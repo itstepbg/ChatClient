@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends Activity {
+public class ChatActivity extends Activity {
 
     private ArrayList<String> chatMessages = new ArrayList<>();
     private ArrayAdapter chatHistoryAdapter;

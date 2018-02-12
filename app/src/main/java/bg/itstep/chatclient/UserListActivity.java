@@ -1,7 +1,10 @@
 package bg.itstep.chatclient;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -30,6 +33,14 @@ public class UserListActivity extends Activity {
                 new ArrayAdapter(this, android.R.layout.simple_list_item_1, users);
 
         usersList.setAdapter(usersAdapter);
+
+        usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent(UserListActivity.this, ChatActivity.class);
+                UserListActivity.this.startActivity(intent);
+            }
+        });
 
         updateUsersList();
     }
