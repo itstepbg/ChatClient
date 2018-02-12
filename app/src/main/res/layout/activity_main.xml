@@ -3,33 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/chat_message_container"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true">
+    <Button
+        android:id="@+id/chat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="text"
+        android:maxLines="1"
+        android:text="ИЗПРАТИ" />
 
-        <Button
-            android:id="@+id/chat_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:inputType="text"
-            android:maxLines="1"
-            android:text="ИЗПРАТИ" />
-
-        <EditText
-            android:id="@+id/chat_message"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@id/chat_button"/>
-    </RelativeLayout>
+    <EditText
+        android:id="@+id/chat_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/chat_button"
+        android:maxHeight="128dp" />
 
     <ListView
         android:id="@+id/chat_history"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@id/chat_message_container"
+        android:layout_above="@id/chat_message"
         android:layout_alignParentTop="true" />
 </RelativeLayout>
