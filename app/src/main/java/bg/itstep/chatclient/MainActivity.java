@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
 
     private ArrayList<String> chatMessages = new ArrayList<>();
     private ArrayAdapter chatHistoryAdapter;
+
     private ListView chatHistory;
     private EditText chatMessage;
     private Button chatButton;
@@ -34,9 +35,12 @@ public class MainActivity extends Activity {
         setupChatGUI();
     }
 
-    private void setupChatGUI() {
-        chatButton.setOnClickListener(new ChatButtonClickListener());
+    View.OnClickListener buttonClickListener = new ChatButtonClickListener();
 
+    private void setupChatGUI() {
+        chatButton.setOnClickListener(buttonClickListener);
+
+        // TODO
         chatHistoryAdapter =
                 new ArrayAdapter(this, android.R.layout.simple_list_item_1, chatMessages);
         chatHistory.setAdapter(chatHistoryAdapter);
@@ -66,7 +70,11 @@ public class MainActivity extends Activity {
     private class ChatButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            sendMessage();
+            switch (view.getId()) {
+                case R.id.chat_button:
+                    sendMessage();
+                    break;
+            }
         }
     }
 
