@@ -21,6 +21,8 @@ public class ChatActivity extends Activity {
     private EditText chatMessage;
     private Button chatButton;
 
+    private View.OnClickListener buttonClickListener = new ChatButtonClickListener();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +36,6 @@ public class ChatActivity extends Activity {
 
         setupChatGUI();
     }
-
-    View.OnClickListener buttonClickListener = new ChatButtonClickListener();
 
     private void setupChatGUI() {
         chatButton.setOnClickListener(buttonClickListener);

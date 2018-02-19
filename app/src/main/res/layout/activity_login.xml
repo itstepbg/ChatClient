@@ -3,26 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/user_name"
+    <LinearLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/user_name"
-        android:layout_centerHorizontal="true"
-        android:inputType="textPassword" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User:" />
 
-    <Button
-        android:id="@+id/login"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-        android:layout_centerHorizontal="true"
-        android:text="LOGIN" />
+        <EditText
+            android:id="@+id/activity_login_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:" />
+
+        <EditText
+            android:id="@+id/activity_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/activity_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN" />
+    </LinearLayout>
 
 </RelativeLayout>
